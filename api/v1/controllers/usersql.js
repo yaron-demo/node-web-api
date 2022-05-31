@@ -18,7 +18,7 @@ const config={
 module.exports={ 
      Login:(req,res)=>{
        //  console.log(config);
-       
+
         mssql.connect(config).
         then(function(conn){          
             const {Username,Pass}=req.body;
@@ -29,7 +29,7 @@ module.exports={
                 const user=rows.recordset[0];
                 bcrypt.compare(Pass,user.Pass).then((status)=>{
                         if(!status)
-                            return res.status(409).json({Msg:"Username or Password Not Found"});
+                            return res.status(409).json({Msg:"Username And / or Password Not Found"});
 
                       
                      //   const token=jwt.sign({Username:user.Username},process.env.SECRET_KEY,{expiresIn:'1H'});
