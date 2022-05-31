@@ -15,9 +15,10 @@ const config={
 // SQL_PASS=123
 // SQL_PORT=1433
 // SQL_OPTIONS_TRUSTED=true
-module.exports={
+module.exports={ 
      Login:(req,res)=>{
        //  console.log(config);
+       
         mssql.connect(config).
         then(function(conn){          
             const {Username,Pass}=req.body;
