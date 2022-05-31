@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({
-    extended:false
+    extended:false 
 }))
 
 
@@ -21,7 +21,7 @@ const uri =process.env.MONGO_CONN_STR;
 mongoose.connect(process.env.MONGO_CONN_STR,{ useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 mongoose.connection.on('connected',()=>{
 
-    console.log("MongoConnected successfully");
+    console.log("Mongo DB Connected successfully");
 });
 // const client = new MongoClient(uri, );
 // client.connect((err,result) => {
